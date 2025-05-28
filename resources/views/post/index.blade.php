@@ -20,7 +20,7 @@
         <th>Uuid</th>
         <th>Currency</th>
         <th>
-          <a href="{{ route('post.create') }} ">Create</a>
+          <a href="{{ route('post.create') }}">Create</a>
         </th>
       </tr>
     </thead>
