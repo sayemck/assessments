@@ -36,6 +36,13 @@
             <a href="{{ route('invoice.download', 4) }}" target="_blank">Download Invoice</a>
         </td>
        </tr>
+       <tr>
+        <td>3</td>
+        <td>Routing Basics</td>
+        <td>
+            <a href="{{ route('welcome.route') }}" target="_blank">Basic Route </a> <br>
+        </td>
+       </tr>
     </tbody>
   </table>
 </div>

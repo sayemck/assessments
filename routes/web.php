@@ -40,3 +40,34 @@ Route::post('file-store', [FileManagementController::class, 'fileStore'])
 Route::get('/invoices/download/{id}', [FileManagementController::class, 'downloadInvoice'])
     ->name('invoice.download');
 
+
+Route::get('/welcome', function () {
+    return view('routing_task.welcome');
+})->name('welcome.route');
+
+Route::post('/submit-form', function () {
+    return redirect('/success')->with('status', 'Form submitted successfully!');
+})->name('form.submit');
+
+Route::get('/success', function () {
+    return session('status');
+});
+
+Route::get('/users/{id}', function ($id) {
+    return "User Profile: {$id}";
+})->name('user.profile');
+
+Route::get('/login', function () {
+    return view('routing_task.login');
+})->name('login');
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+
+    Route::get('/dashboard', function () {
+        return "Admin Dashboard";
+    });
+
+    Route::get('/reports', function () {
+        return "Sales Reports";
+    });
+});
